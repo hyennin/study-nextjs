@@ -14,8 +14,8 @@ const CommunityList = () => {
             <Button href="/community/posting">당신의 이야기를 들려주세요</Button>
             <div className='communi-box'>
                 산후 우울증에 대해...      
-                <img src={isClick? "/img/pink_heart.png" : "/img/heart.png"} alt='img' onClick={click_heart} className='heart'/>               
-                <img className='communi' src="/img/communi.png" alt="communi"/>                
+                <img src={isClick? "pink_heart.png" : "heart.png"} alt='img' onClick={click_heart} className='heart'/>               
+                <img className='communi' src="communi.png" alt="communi"/>                
             </div>
         </div>
     );

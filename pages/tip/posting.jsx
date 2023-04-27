@@ -9,7 +9,7 @@ const TipPosting = () => {
                 <thead>
                     <tr>
                     <th></th>
-                    <button className='group2'><img src="/img/Group2.png" alt="group"/></button>
+                    <button className='group2'><img src="Group2.png" alt="group"/></button>
                     </tr>
                 </thead>
             </table>

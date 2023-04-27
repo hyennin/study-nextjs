@@ -6,7 +6,7 @@ const MyPage = () => {
     <>
       <Navbar />
       <div className="img">
-        <img className="img-1" src="/img/profile.png" alt="프로필"/>
+        <img className="img-1" src="profile.png" alt="프로필"/>
       </div>
       <div>
         <p className="text">

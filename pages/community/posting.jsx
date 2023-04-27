@@ -9,7 +9,7 @@ const CommunityPosting = () => {
                 <thead>
                     <tr>
                     <th></th>
-                    <button className='group2'><img src="/img/Group2.png"/></button>
+                    <button className='group2'><img src="Group2.png"/></button>
                     </tr>
                 </thead>
             </table>
