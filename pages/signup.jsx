@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
+import { ModeContext } from ".";
+import axios from 'axios';
 
-const SignUp = (props) => {
+const SignUp = () => {
+    const setMode = useContext(ModeContext);
     const [name, setName] = useState("");
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
@@ -38,27 +41,19 @@ const SignUp = (props) => {
                 <Button 
                     type="submit"
                     onClick={() => {
-                        const userData = {
+                        axios.post("http://localhost:3001/signup", {
                             userName: name,
                             userId: id,
                             userPassword: password,
-                            userPassword2: password2,
-                        };
-                        fetch("http://localhost:3001/signup", { //signup 주소에서 받을 예정
-                          method: "post", // method :통신방법
-                          headers: {      // headers: API 응답에 대한 정보를 담음
-                            "content-type": "application/json",
-                          },
-                          body: JSON.stringify(userData), //userData라는 객체를 보냄
+                            userPassword2: password2
                         })
-                          .then(res => res.json())
-                          .then(json => {
-                            if(json.isSuccess === true){
-                              alert('회원가입이 완료되었습니다!');
-                              props.setMode("LOGIN");
-                            }
-                            else alert(json.isSuccess);
-                          });
+                            .then(res => {
+                                if(res.isSuccess === true){
+                                alert('회원가입이 완료되었습니다!');
+                                setMode("LOGIN");
+                                }
+                                else alert(res.message);
+                            });
                     }}>Sign Up</Button>
             </Form>
             <Text>회원가입이 되어있으신가요?  <SignUpBtn href="/login" onClick={() => props.setMode("LOGIN")}>Login</SignUpBtn></Text>

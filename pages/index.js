@@ -1,15 +1,39 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import Navbar from './Navbar.js'
-import styles from '@component/styles/Home.module.css'
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import axios from 'axios';
+import Login from './login';
+import SignUp from './signup';
 
-const inter = Inter({ subsets: ['latin'] })
+export const ModeContext = React.createContext();
 
 export default function Home() {
+  // const [mode, setMode] = useState("");
+  const router = useRouter();
+
+  /*
+  useEffect(() => {
+    axios.get("http://localhost:3001/authcheck")
+      .then((res) => {        
+        if (res.isLogin === true) setMode("WELCOME");
+        else setMode("LOGIN");
+      });
+  }, []); 
+  
+  useEffect(() => {
+    if(mode==="LOGIN"){
+      router.push('/login');
+    } else if (mode === "SIGNUP") {
+      router.push('/signup');
+    } else if (mode === "WELCOME") {
+      router.push('/community');;
+    }
+  }, [mode]); 
+  */
+
   return (
-    <>
-      <Navbar/>
-    </>
-  )
+    <div>
+      <Login />
+      {/* <SignUp /> */}
+    </div>
+  );
 }

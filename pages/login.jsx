@@ -1,7 +1,12 @@
-import React, { useState }from "react";
+import React, { useContext, useState }from "react";
 import styled from "styled-components";
+// import { ModeContext } from ".";
+import axios from 'axios';
+import { Router, useRouter } from "next/router";
 
-const Login = (props) => {
+const Login = () => {
+    const router = useRouter();
+    // const setMode = useContext(ModeContext);
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
 
@@ -27,22 +32,16 @@ const Login = (props) => {
                     type="submit"
                     onClick={(e) => {
                         e.preventDefault();
-                        const userData = {
+                        axios.post("http://localhost:3001/login", {
                             userId: id,
-                            userPassword: password,
-                        };
-                        fetch("http://localhost:3001/login", { //auth 주소에서 받을 예정
-                        method: "post", // method :통신방법
-                        headers: {      // headers: API 응답에 대한 정보를 담음
-                            "content-type": "application/json",
-                        },
-                        body: JSON.stringify(userData), //userData라는 객체를 보냄
+                            userPassword: password
                         })
-                        .then(res => res.json())
-                        .then(json => {  
-                            if(json.isLogin === true) props.setMode("WELCOME");
-                            else alert(json.isLogin);
-                        });
+                            .then(res => {  
+                                if(res.data.isLogin === true) {
+                                    router.push("/community")
+                                }
+                                else alert(res.data.message);
+                            });
                     }}>Login</Button>
             </Form>
             <Text>아이디가 없으신가요?  <SignUpBtn href="/signup" onClick={() => props.setMode("SIGNUP")}>Sign Up</SignUpBtn></Text>
