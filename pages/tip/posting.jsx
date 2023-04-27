@@ -1,15 +1,15 @@
 import React from 'react';
-import Group2 from '@component/styles/img/Group2.png';
+import Navbar from '../Navbar';
 
 const TipPosting = () => {
-
     return(
         <div>
+            <Navbar />
             <table border={1}>
                 <thead>
                     <tr>
                     <th></th>
-                    <button className='group2'><img src={Group2} alt="group"/></button>
+                    <button className='group2'><img src="/img/Group2.png" alt="group"/></button>
                     </tr>
                 </thead>
             </table>

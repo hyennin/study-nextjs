@@ -1,13 +1,12 @@
 import React from "react";
-import Navbar from "@component/pages/Navbar.js";
-import profile from "@component/styles/img/profile.png";
+import Navbar from "@/pages/Navbar.js";
 
 const MyPage = () => {
   return (
     <>
       <Navbar />
       <div className="img">
-        <img className="img-1" src={profile} alt="프로필"/>
+        <img className="img-1" src="/img/profile.png" alt="프로필"/>
       </div>
       <div>
         <p className="text">

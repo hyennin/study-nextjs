@@ -1,8 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import logo from '@component/styles/img/logo.png'
-import profile from '@component/styles/img/profile.png';
-import Group from '@component/styles/img/Group.png';
 import React, { useState } from 'react';
 
 
@@ -17,16 +14,16 @@ const Navbar = () => {
         <nav className='navbar'>
             <div className='navbar_logo'>
                 <a href='/'>
-                    <img className='logo' src={logo} alt='logo' />
+                    <img className='logo' src="/img/logo.png" alt='logo' />
                     <input className='input' />
-                    <button className='group'><img src={Group} /></button>
+                    <button className='group'><img src="img/Group.png" /></button>
                 </a>
             </div>
             <ul className={`navbar_menu ${isMenuOpen ? 'active' : ''}`}>
                 <li><a href='/community'>소통방</a></li>
                 <li><a href='/tip'>육아팁</a></li>
                 <li><a href='/diary'>다이어리</a></li>
-                <li><a href='/mypage'><img className='profile' src={profile} /></a></li>
+                <li><a href='/mypage'><img className='profile' src="/img/profile.png" /></a></li>
             </ul>
             <a href='#' className='navbar_toggleBtn' onClick={toggleMenu}>
                 <FontAwesomeIcon icon={faBars} />

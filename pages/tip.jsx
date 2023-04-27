@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import heart from '@component/styles/img/heart.png';
-import communi from '@component/styles/img/communi.png';
-import pink_heart from '@component/styles/img/pink_heart.png';
 import styled from "styled-components";
+import Navbar from './Navbar';
 
 const TipList = () => {
     const [isClick, setIsClick] = useState(false);
@@ -13,11 +11,12 @@ const TipList = () => {
    
     return (
         <div>
+            <Navbar/>
             <Button href="/tip/posting">당신의 팁을 들려주세요</Button>
             <div className='communi-box'>
                 아이가 잠을 안 잘때!                              
-                <img src={isClick? pink_heart: heart} alt='img' onClick={click_heart} className='heart'/>             
-                <img className='communi' src={communi} alt="communi"/>            
+                <img src={isClick? "/img/pink_heart.png": "/img/heart.png"} alt='img' onClick={click_heart} className='heart'/>             
+                <img className='communi' src="/img/communi.png" alt="communi"/>            
             </div>
         </div>
     );
