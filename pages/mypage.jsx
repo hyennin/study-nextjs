@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "./Navbar";
 import styles from "../styles/MyPage.module.css"
+import { UserContext } from "@/context/UserContext";
 
 const MyPage = () => {
+  const user = useContext(UserContext);
+  console.log(user);
+
   return (
     <>
       <Navbar />
@@ -11,9 +15,8 @@ const MyPage = () => {
       </div>
       <div>
         <p className={`${styles.text}`}>
-          닉네임 : 설윤 맘미
-          <br /> 아이디 : smom.546
-          <br /> 생일 : 2006.02.03
+          {`닉네임 : ${user[0].nickname}`}
+          <br /> {`아이디 : ${user[0].id}`}
         </p>
       </div>
       <button className={`${styles.button}`}>정보수정</button>
