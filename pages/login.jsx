@@ -1,12 +1,14 @@
-import React, { useContext, useState }from "react";
+import React from "react";
 import styled from "styled-components";
-import axios from 'axios';
-import { Router, useRouter } from "next/router";
+import axios from "axios";
+import { useRouter } from "next/router";
+import { useUser } from "@/context/UserContext";
 
 const Login = () => {
     const router = useRouter();
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
+    const {user, setUser} = useUser();
 
     return (
         <Container>
@@ -36,6 +38,11 @@ const Login = () => {
                         })
                             .then(res => {  
                                 if(res.data.isLogin === true) {
+                                    setUser({
+                                        ...user,
+                                        nickname: "hi",
+                                        id: "bye"
+                                    });
                                     router.push("/community")
                                 }
                                 else alert(res.data.message);

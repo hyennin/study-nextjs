@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import Navbar from "./Navbar";
-import styles from "../styles/MyPage.module.css"
-import { UserContext } from "@/context/UserContext";
+import styles from "../styles/MyPage.module.css";
+import { useUser } from "@/context/UserContext";
 
 const MyPage = () => {
-  const user = useContext(UserContext);
-  console.log(user);
+  const {user, setUser} = useUser();
 
   return (
     <>
@@ -15,8 +14,8 @@ const MyPage = () => {
       </div>
       <div>
         <p className={`${styles.text}`}>
-          {`닉네임 : ${user[0].nickname}`}
-          <br /> {`아이디 : ${user[0].id}`}
+          {`닉네임 : ${user.nickname}`}
+          <br /> {`아이디 : ${user.id}`}
         </p>
       </div>
       <button className={`${styles.button}`}>정보수정</button>
