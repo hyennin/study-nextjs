@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
-import styles from '../styles/DiaryList.module.css'
+import styles from '../styles/Diary.module.css'
 
 const DiaryList = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../Navbar';
-import styles from '../../styles/TipPosting.module.css';
+import styles from '../../styles/CommunityPosting.module.css';
 
 const CommunityPosting = () => {
     return(
