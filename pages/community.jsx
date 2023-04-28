@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
-import styled from "styled-components"
 import styles from '../styles/Community.module.css'
 
 const CommunityList = () => {
