@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
-import styled from "styled-components";
+import styled from "styled-components"
+import styles from '../styles/Communication.module.css'
 
 const CommunityList = () => {
     const [isClick, setIsClick] = useState(false);
@@ -12,10 +13,10 @@ const CommunityList = () => {
         <div>
             <Navbar />
             <Button href="/community/posting">당신의 이야기를 들려주세요</Button>
-            <div className='communi-box'>
+            <div className={`${styles['communi-box']}`}>
                 산후 우울증에 대해...      
-                <img src={isClick? "pink_heart.png" : "heart.png"} alt='img' onClick={click_heart} className='heart'/>               
-                <img className='communi' src="communi.png" alt="communi"/>                
+                <img src={isClick? "pink_heart.png" : "heart.png"} alt='img' onClick={click_heart} className={`${styles.heart}`}/>               
+                <img className={`${styles.communi}`} src="communi.png" alt="communi"/>                
             </div>
         </div>
     );

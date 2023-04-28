@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from 'react';
+import styles from '../styles/Navbar.module.css';
 
 
 const Navbar = () => {
@@ -11,21 +12,21 @@ const Navbar = () => {
     };
 
     return (
-        <nav className='navbar'>
-            <div className='navbar_logo'>
-                <a href='/'>
-                    <img className='logo' src="logo.png" alt='logo' />
-                    <input className='input' />
-                    <button className='group'><img src="Group.png" /></button>
+        <nav className={`${styles.navbar}`}>
+            <div className={`${styles.navbar_logo}`}>
+                <a className={`${styles.a}`} href='/'>
+                    <img className={`${styles.logo}`} src="logo.png" alt='logo' />
                 </a>
+                <input className={`${styles.input}`} />
+                <button className={`${styles.group}`}><img src="Group.png" /></button>
             </div>
-            <ul className={`navbar_menu ${isMenuOpen ? 'active' : ''}`}>
-                <li><a href='/community'>소통방</a></li>
-                <li><a href='/tip'>육아팁</a></li>
-                <li><a href='/diary'>다이어리</a></li>
-                <li><a href='/mypage'><img className='profile' src="profile.png" /></a></li>
+            <ul className={`${styles.navbar_menu} ${isMenuOpen ? 'active' : ''}`}>
+                <li><a className={`${styles.a}`} href='/community'>소통방</a></li>
+                <li><a className={`${styles.a}`} href='/tip'>육아팁</a></li>
+                <li><a className={`${styles.a}`} href='/diary'>다이어리</a></li>
+                <li><a className={`${styles.a}`} href='/mypage'><img className={`${styles.profile}`} src="profile.png" /></a></li>
             </ul>
-            <a href='#' className='navbar_toggleBtn' onClick={toggleMenu}>
+            <a href='#' className={`${styles.navbar_toggleBtn}`} onClick={toggleMenu}>
                 <FontAwesomeIcon icon={faBars} />
             </a>
         </nav>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../Navbar';
+import styles from '../../styles/TipPosting.module.css';
 
 const CommunityPosting = () => {
     return(
@@ -9,14 +10,14 @@ const CommunityPosting = () => {
                 <thead>
                     <tr>
                     <th></th>
-                    <button className='group2'><img src="Group2.png"/></button>
+                    <button className={`${styles.group2}`}><img src="Group2.png"/></button>
                     </tr>
                 </thead>
             </table>
                 <thead>
-                <textarea className='text' placeholder="내용을 입력하세요."></textarea>
+                <textarea className={`${styles.text}`} placeholder="내용을 입력하세요."></textarea>
                 </thead>
-                <button className='up'>올리기</button>
+                <button className={`${styles.up}`}>올리기</button>
             
 
            

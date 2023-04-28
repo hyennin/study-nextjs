@@ -1,12 +1,10 @@
 import React, { useContext, useState }from "react";
 import styled from "styled-components";
-// import { ModeContext } from ".";
 import axios from 'axios';
 import { Router, useRouter } from "next/router";
 
 const Login = () => {
     const router = useRouter();
-    // const setMode = useContext(ModeContext);
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
 

@@ -1,11 +1,3 @@
-body {
-    margin: 0;
-    background-color: #FDF3D1;
-}
-a {
-    text-decoration: none;
-    color: white;
-}
 .navbar {
     display: flex;
     justify-content: space-between;
