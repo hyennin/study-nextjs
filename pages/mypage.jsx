@@ -14,8 +14,11 @@ const MyPage = () => {
       </div>
       <div>
         <p className={`${styles.text}`}>
-          {`닉네임 : ${user.nickname}`}
-          <br /> {`아이디 : ${user.id}`}
+          설윤맘미
+          <br/>
+          smom.546
+          {/* {`닉네임 : ${user.nickname}`}
+          <br /> {`아이디 : ${user.id}`} */}
         </p>
       </div>
       <button className={`${styles.button}`}>정보수정</button>

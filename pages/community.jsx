@@ -12,10 +12,10 @@ const CommunityList = () => {
         <div>
             <Navbar />
             <a className={`${styles.postingBtn}`} href="/community/posting">당신의 이야기를 들려주세요</a>
-            <div className={`${styles['communi-box']}`}>
+            <div className={`${styles.communi_box}`}>
                 산후 우울증에 대해...      
+                <input type="text" className={`${styles.communi}`} placeholder='따뜻한 말 한마디 해주세요'></input>
                 <img src={isClick? "pink_heart.png" : "heart.png"} alt='img' onClick={click_heart} className={`${styles.heart}`}/>               
-                <img className={`${styles.communi}`} src="communi.png" alt="communi"/>                
             </div>
         </div>
     );

@@ -1,10 +1,11 @@
-import UserContext from '../context/UserContext';
+import UserProvider from '../context/UserContext';
 import '@/styles/globals.css';
 
 export default function App({ Component, pageProps }) {
   return (
-    <UserContext>
-      <Component {...pageProps} />
-    </UserContext>
+    <Component />
+    // <UserProvider>
+    //   <Component {...pageProps} />
+    // </UserProvider>
   );
 }
